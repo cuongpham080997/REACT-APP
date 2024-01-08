@@ -1,0 +1,12 @@
+/* 
+Sau khi biên dịch thì sẽ thành tên class => _heading-2fajsdlfk.....
+*/
+
+.heading-2 {
+    color: red;
+    background-color: green;
+  }
+  .container {
+    background-color: blue;
+  }
+  

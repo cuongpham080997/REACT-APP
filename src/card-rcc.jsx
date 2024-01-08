@@ -10,6 +10,6 @@ export default class CardRCC extends Component {
   render() {
     //! Babel: html -> createElement. Babel đã có sẵn trong module React không cần cài đặt.
     
-    return <div className="card">Card RCB</div>;   //!babel sẽ chuyển đoạn code này thành return createElement("div", { className: "card" }, "Card RCB");
+    return <div className="card">Card RCB</div>;   //!babel sẽ chuyển đoạn code này thành return createElement("div", { className: "card" }, "Card RCB") để jsx đọc được (mặc định jsx không thể đọc được cấu trúc html);
   }
 }
