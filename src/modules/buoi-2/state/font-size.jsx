@@ -13,6 +13,7 @@ export default class FontSize extends Component {
       fontSize: 16,
     };
   }
+
   render() {
     // Tăng giảm font size của thẻ p
     return (

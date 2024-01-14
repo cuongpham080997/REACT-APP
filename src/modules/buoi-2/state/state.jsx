@@ -20,9 +20,12 @@ import React, { Component } from "react";
  */
 
 /**
- * 1. Cách khai báo state.
+ * 1. Cách khai báo state:
+  //* this.state là thuộc tính có sẵn của component, chứa các thuộc tính có khả năng thay đổi bởi 1 sự kiện nào đó của component 
  * 2. Cách sử dụng.
  * 3. Cách cập nhật state.
+  //* this.setState() là phương thức kế thừa từ class component => thay đổi giá trị state và gọi hàm render => render lại giao diện
+  //* setState là 1 phương thức bất đồng bộ
  * 4. Nguyên tắc hoạt động: tự động gọi lại method render của component.
  */
 
@@ -47,7 +50,12 @@ export default class State extends Component {
               const newState = {
                 isLogin: false,
               };
-              this.setState(newState);
+              this.setState(newState,()=>{
+                //! setState nhận tham số thứ 2 là 1 callback function.Thì câu lệnh in dưới sẽ được thực hiện sau khi setState thực hiện
+                console.log('Sau khi setState thực thi xong:',this.state)
+              });
+              //! Kết quả vẫn sẽ là true vì câu lệnh dưới sẽ thực hiện trước setState do setState là 1 phương thức bất đồng bộ.
+              console.log('Thực thi trước setState',this.state)
             }}
           >
             Đăng Xuất
@@ -66,6 +74,7 @@ export default class State extends Component {
               isLogin: true,
             };
             this.setState(newState);
+            
           }}
         >
           Đăng Nhập
@@ -178,4 +187,4 @@ export default class State extends Component {
     );
   }
 }
-            
+

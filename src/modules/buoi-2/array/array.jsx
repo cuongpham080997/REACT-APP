@@ -28,7 +28,7 @@ const listCar = [
 ];
 
 /**
- * Khi render với mảng thì mỗi phần tử con nên có 
+ * Khi render với mảng thì mỗi phần tử con nên có key ở thẻ bao ọc ngoài cùng lớn nhất của mỗi phần tử đó
  */
 
 export default class Array extends Component {
