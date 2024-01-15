@@ -8,11 +8,15 @@ export default class CardPhone extends Component {
         <img src={product.hinhAnh} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{product.tenSP}</h5>
-          <button onClick={()=>{this.props.handleState(product)}}
-            className="btn btn-primary"
-          >
-            Xem chi tiết
-          </button>
+          <p>{product.giaBan}</p>
+          <div className="d-flex gap-2">
+            <button onClick={()=>{this.props.handleState(product)}}
+              className="btn btn-primary"
+            >
+              Xem chi tiết
+            </button>
+            <button className='btn btn-primary' onClick={()=>{this.props.handleThemGioHang(product)}}>Thêm vào giỏ hàng</button>
+          </div>
         </div>
       </div>
     );

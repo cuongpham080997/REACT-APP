@@ -14,3 +14,20 @@
 - để cài những thư viện được liệt kê trong dự án.
 8. node_modules
 - nơi chứa tất cả thư viện của dự án.
+
+9.
+#Chú thích:
+- Sau khi clone repo về thì gõ npm i đê cài các thư viện trong dự án của chúng ta.
+- start dự án: `npm run dev`
+
+10. State vs Props
+- State: + Trạng thái của 1 component
+         + Giá trị có thể xét lại, mỗi lần xét lại sẽ re-render
+
+- Props: +Giá trị truyền từ component cha vào component con. Giao tiếp giữa hai component với nhau(Cha-con)
+         + Giá trị không thể xét lại vì được truyền từ bên ngoài vào(ở trong component)
+=>Khi nào sử dụng state, prop?
+- Sử dụng state khi có sự tương tác của người dùng làm thay đổi giao diện
+- Sử dụng props khi chúng ta muốn truyền dữ liệu từ component cha -> con.
+
+11. Khi cập nhật lại state giống với giá trị trước đó thì component sẽ không re-render. 
