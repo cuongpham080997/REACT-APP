@@ -22,6 +22,9 @@ import PhoneShop from "./modules/buoi-3/phone-shop/phone-shop";
 import ChangeCarColor from "./modules/buoi-2/state/change-car-color";
 import DemoVongLap from "./modules/buoi-2/array/demoVongLap";
 import MovieList from "./modules/buoi-2/array/movie-list";
+import DemoProps from "./modules/buoi-3/props/demo-props";
+import BaiTapTruyenFunction from "./modules/buoi-3/props/BaiTapTruyenFunc/bai-tap-truyen-func";
+import BaiTapGioHang from "./modules/buoi-3/props/BaiTapGioHang/BaiTapGioHang";
 // Function component
 /**
  * Lưu ý:
@@ -80,8 +83,16 @@ class House extends Component {
 function App() {
   return (
     <div className="app" style={{ display: "flex", gap: 10 }}>
-      <PhoneShop/>
+
+      {/* {/*//* bài 3 */}
+      {/* <PhoneShop/> */}
+
+
+      <BaiTapGioHang/>
+      {/* <BaiTapTruyenFunction/> */}
       
+      {/* <DemoProps/> */}
+
       {/* <BtProductList/> */}
 
       {/* <House mai="green" body="yellow" />
@@ -105,6 +116,7 @@ function App() {
       {/* <Footer name="CyberSoft" a='cybersoft' />
       <Footer name="React" /> */}
 
+      {/* {/*//* bài 2 */}
       {/* <MovieList/> */}
       {/* <DemoVongLap/> */}
       {/* <Array /> */}
@@ -122,6 +134,7 @@ function App() {
 
       {/* <InlineStyle /> */}
 
+      {/* {/*//* bài 1 */}
       {/* <HandleEvent /> */}
       {/* <BindingData /> */}
 

@@ -22,10 +22,10 @@
 
 10. State vs Props
 - State: + Trạng thái của 1 component
-         + Giá trị có thể xét lại, mỗi lần xét lại sẽ re-render
+         + Giá trị có thể xét lại, mỗi lần xét lại sẽ re-render(xét ở vị trí trong 1 component)
 
 - Props: +Giá trị truyền từ component cha vào component con. Giao tiếp giữa hai component với nhau(Cha-con)
-         + Giá trị không thể xét lại vì được truyền từ bên ngoài vào(ở trong component)
+         + Giá trị không thể xét lại vì được truyền từ bên ngoài vào(xét ở vị trí ở trong component)
 =>Khi nào sử dụng state, prop?
 - Sử dụng state khi có sự tương tác của người dùng làm thay đổi giao diện
 - Sử dụng props khi chúng ta muốn truyền dữ liệu từ component cha -> con.

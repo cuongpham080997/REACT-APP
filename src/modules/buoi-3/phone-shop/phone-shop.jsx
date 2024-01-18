@@ -64,36 +64,43 @@ export default class PhoneShop extends Component {
   }
 
   handleThemGioHang = (pd) => {
-    // this.setState({
-    //   gioHang: this.state.gioHang.push(pd),
-    // })
-
-    console.log(this.state.gioHang);
-    // Phải clone để khi setState react có thể nhận thấy hai giá trị khác nhau mà cập nhật lại giao diện.
-    const newGioHang = [...this.state.gioHang]; // 0xzzz
-
-    /**
-     * Kiểm tra sản phẩm cần thêm vào có tồn tại trong giỏ hàng hay chưa?
-     * - Tồn tại: tăng số lượng. tìm kiếm trong giỏ hàng rồi thay đổi giá trị thuộc tính soLuong.
-     * - Chưa: số lượng = 1.
-     */
-
-    let pdExist = this.state.gioHang.find((sp) => {
-      return sp.maSP === pd.maSP;
-    });
-    // pdExist === undefined: chưa tồn tại
-    // pdExist !== undefined: tồn tại.
-    if (pdExist) {
-      // tồn tại: chỉ cập nhật lại số lượng sản phẩm.
-      pdExist.soLuong += 1;
-    } else {
-      pdExist = { ...pd, soLuong: 1 };
-      // Chưa tồn tại thì mới thêm mới vào giỏ hàng.
-      newGioHang.push(pdExist);
-    }
-
     this.setState({
-      gioHang: newGioHang, // 0xzzz
+      modal: {
+        title: "Thêm Sản Phẩm",
+        content: "Bạn có chắc chắn muốn thêm sản phẩm này hay không?",
+        open: true,
+        onClose: this.closeModal,
+        onOK: () => {
+          // Phải clone để khi setState react có thể nhận thấy hai giá trị khác nhau mà cập nhật lại giao diện.
+          const newGioHang = [...this.state.gioHang]; // 0xzzz
+
+          /**
+           * Kiểm tra sản phẩm cần thêm vào có tồn tại trong giỏ hàng hay chưa?
+           * - Tồn tại: tăng số lượng. tìm kiếm trong giỏ hàng rồi thay đổi giá trị thuộc tính soLuong.
+           * - Chưa: số lượng = 1.
+           */
+
+          let pdExist = this.state.gioHang.find((sp) => {
+            return sp.maSP === pd.maSP;
+          });
+          // pdExist === undefined: chưa tồn tại
+          // pdExist !== undefined: tồn tại.
+          if (pdExist) {
+            // tồn tại: chỉ cập nhật lại số lượng sản phẩm.
+            pdExist.soLuong += 1;
+          } else {
+            pdExist = { ...pd, soLuong: 1 };
+            // Chưa tồn tại thì mới thêm mới vào giỏ hàng.
+            newGioHang.push(pdExist);
+          }
+
+          this.setState({
+            gioHang: newGioHang, // 0xzzz
+          });
+
+          this.closeModal();
+        },
+      },
     });
   };
 
@@ -110,6 +117,8 @@ export default class PhoneShop extends Component {
      * filter, splice
      * filter: lập qua từng phần tử của mảng, và trả về một mảng mới chứa các phần tử thỏa mãn điều kiện.
      */
+
+    // Lấy những phần tử có maSP khác với sản phẩm chúng ta truyền vào.
 
     this.setState({
       modal: {
@@ -130,35 +139,6 @@ export default class PhoneShop extends Component {
         },
       },
     });
-
-    handleThemGioHang = (pd) => {
-      // Phải clone để khi setState react có thể nhận thấy hai giá trị khác nhau mà cập nhật lại giao diện.
-      const newGioHang = [...this.state.gioHang]; // 0xzzz
-
-      /**
-       * Kiểm tra sản phẩm cần thêm vào có tồn tại trong giỏ hàng hay chưa?
-       * - Tồn tại: tăng số lượng. tìm kiếm trong giỏ hàng rồi thay đổi giá trị thuộc tính soLuong.
-       * - Chưa: số lượng = 1.
-       */
-
-      let pdExist = this.state.gioHang.find((sp) => {
-        return sp.maSP === pd.maSP;
-      });
-      // pdExist === undefined: chưa tồn tại
-      // pdExist !== undefined: tồn tại.
-      if (pdExist) {
-        // tồn tại: chỉ cập nhật lại số lượng sản phẩm.
-        pdExist.soLuong += 1;
-      } else {
-        pdExist = { ...pd, soLuong: 1 };
-        // Chưa tồn tại thì mới thêm mới vào giỏ hàng.
-        newGioHang.push(pdExist);
-      }
-
-      this.setState({
-        gioHang: newGioHang, // 0xzzz
-      });
-    };
   };
 
   handleTangSoLuong = (msp) => {
