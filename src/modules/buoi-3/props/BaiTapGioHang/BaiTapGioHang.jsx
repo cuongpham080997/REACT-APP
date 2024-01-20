@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import DanhSachSanPhamGioHang from "./DanhSachSanPhamGioHang";
 import ModalGioHang from "./ModalGioHang";
-
 const phoneData = [
   {
     maSP: 1,

@@ -31,3 +31,7 @@
 - Sử dụng props khi chúng ta muốn truyền dữ liệu từ component cha -> con.
 
 11. Khi cập nhật lại state giống với giá trị trước đó thì component sẽ không re-render. 
+
+12. Redux
+- cách tạo state.
+- cách cập nhật state.

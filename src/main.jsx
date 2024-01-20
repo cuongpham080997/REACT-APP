@@ -4,6 +4,10 @@ import ReactDOM from "react-dom/client";
 // ---
 // import default
 import App from "./App.jsx";
+// -- Config Redux --
+import { Provider } from "react-redux";
+import { rootStore } from "./redux/config.store.js";
+
 // import CardRCC from "./card-rcc.jsx";
 // import CardRFC from "./card-rfc.jsx";
 
@@ -17,17 +21,9 @@ import App from "./App.jsx";
 // Tóm tắt: Đưa các component vào bên trong thẻ div#root
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* Cách sử dụng 1 component tự tạo */}
-    {/* Cách 1: Thẻ mở + Thẻ đóng */}
-    {/* <CardRCC></CardRCC> */}
-    {/* Cách 2: Thẻ vừa mở vừa đóng */}
-    {/* <CardRCC /> */}
-    {/* shift + alt + arrow down */}
-    {/* <CardRFC />
-    <CardRFC />
-    <CardRFC /> */}
-
-    <App />
+    <Provider store={rootStore}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

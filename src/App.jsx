@@ -25,6 +25,9 @@ import MovieList from "./modules/buoi-2/array/movie-list";
 import DemoProps from "./modules/buoi-3/props/demo-props";
 import BaiTapTruyenFunction from "./modules/buoi-3/props/BaiTapTruyenFunc/bai-tap-truyen-func";
 import BaiTapGioHang from "./modules/buoi-3/props/BaiTapGioHang/BaiTapGioHang";
+import DemoProps2 from "./modules/buoi-4/demo-props";
+import TangGiamFontSize from "./modules/buoi-4/font-size";
+import ReduxObject from "./modules/buoi-4/redux-object";
 // Function component
 /**
  * Lưu ý:
@@ -84,11 +87,16 @@ function App() {
   return (
     <div className="app" style={{ display: "flex", gap: 10 }}>
 
+      {/* {/*//* bài 4 */}
+      <ReduxObject/>
+      {/* <TangGiamFontSize/> */}
+      {/* <DemoProps2/> */}
+
+
       {/* {/*//* bài 3 */}
       {/* <PhoneShop/> */}
 
-
-      <BaiTapGioHang/>
+      {/* <BaiTapGioHang/> */}
       {/* <BaiTapTruyenFunction/> */}
       
       {/* <DemoProps/> */}
