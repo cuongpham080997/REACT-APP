@@ -1,0 +1,9 @@
+.Upload {
+  border-radius: 4px;
+  padding: 4px 12px;
+}
+
+.Upload:hover {
+  color: rgb(0, 119, 255);
+  border-color: rgb(0, 119, 255);
+}

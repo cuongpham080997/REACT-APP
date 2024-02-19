@@ -57,6 +57,7 @@ const mapDispatchToProps = (dispatch) => {
       const action = {
         type: "tangCount", // Phân biệt được giữa các tín hiệu khác nhau.
         payload: 111, //payload là tệp đính kèm
+        //! action có thể có nhiều giá trị(cặp key-value) nhưng thông thương theo quy tắc làm việc vs thằng react thì chỉ có type(hàng động là gì?) và payload(đính kèm thông tin gửi lên redux)
       };
 
       dispatch(action);

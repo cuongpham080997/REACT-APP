@@ -35,3 +35,18 @@
 12. Redux
 - cách tạo state.
 - cách cập nhật state.
+
+13. Life Cycle: Vòng đời component
+- Mounting (Sinh Ra): Khi component được đưa lên trên giao diện (Xuất hiện trên cây DOM - Document Object Model).
+- Updating (Trưởng Thành):  + Khi component cập nhật lại giao diện (UI) (re-render).
+                            + Khi nào component sẽ re-render ??? 
+                                1. State thay đổi (khi setState)
+                                2. Component Cha Re-render thì component con sẽ re-render. (Props thay đổi)
+- Un-Mounting (Chết Đi): Khi component bị xóa khỏi DOM.
+
+14. Method Life Cycle. (Can Thiệp vào vòng đời của component)
+15. Hooks Life Cycle. (Can Thiệp vào vòng đời của component)  
+
+16. setState
+- class: Tự động merge các state lại giúp chúng ta.
+- function: Khi set lại state thì thì sẽ ghi đè lên state(không merge)

@@ -16,7 +16,7 @@ import Array from "./modules/buoi-2/array/array";
 import Footer from "./modules/buoi-3/props/footer";
 import Card from "./modules/buoi-3/props/card";
 import Button from "./modules/buoi-3/props/button";
-import { Component } from "react";
+import { Component,useState } from "react";
 import BtProductList from "./modules/buoi-3/bt-propduct-list";
 import PhoneShop from "./modules/buoi-3/phone-shop/phone-shop";
 import ChangeCarColor from "./modules/buoi-2/state/change-car-color";
@@ -28,6 +28,22 @@ import BaiTapGioHang from "./modules/buoi-3/props/BaiTapGioHang/BaiTapGioHang";
 import DemoProps2 from "./modules/buoi-4/demo-props";
 import TangGiamFontSize from "./modules/buoi-4/font-size";
 import ReduxObject from "./modules/buoi-4/redux-object";
+import LifeCycle from "./modules/buoi-5/life-cycle";
+import FontSizeFC from "./modules/buoi-5/function-component/font-size";
+import Lamp from "./modules/buoi-6/lamp";
+import Random from "./modules/buoi-6/random";
+import UseEffect from "./modules/buoi-6/use-effect";
+import TodoList from "./modules/buoi-6/todo-list";
+import CleanUp from "./modules/buoi-7/clean-up";
+import CleanUp2 from "./modules/buoi-7/clean-up_2";
+import DiaDiem from "./modules/buoi-7/dia-diem";
+import UseRef from "./modules/buoi-7/use-ref";
+import UseContent, { Provider } from "./modules/buoi-7/use-context";
+import { Counter,useCounter } from "./modules/buoi-7/custom-hook";
+import Input from "./modules/buoi-8/input";
+import AdminLaptop from "./modules/admin-laptop/admin-laptop";
+import FontSizeBuoi9 from "./modules/buoi-9/font-size";
+import ChangeColorBuoi9 from "./modules/buoi-9/change-color";
 // Function component
 /**
  * Lưu ý:
@@ -82,13 +98,71 @@ class House extends Component {
     );
   }
 }
-
 function App() {
+  const [show, setShow] = useState(true);
+  const [c,setC] = useState(true)
+  const [{ count }, { handleTang5 }] = useCounter();
+  
   return (
+
     <div className="app" style={{ display: "flex", gap: 10 }}>
 
+      {/* {/*//* bài 9 */}
+      <ChangeColorBuoi9/>
+      {/* <FontSizeBuoi9/> */}
+      
+      
+      {/* {/*//* bài 8 */}
+      {/* <AdminLaptop/> */}
+      {/* <Input/> */}
+      
+      {/* {/*//* bài 7 */}
+      {/* <Counter/> */}
+
+      {/* <Provider>
+        <UseContent/>
+      </Provider> */}
+      
+
+      {/* <UseRef/> */}
+
+      {/* <DiaDiem/> */}
+      
+      {/* <CleanUp2/> */}
+
+      {/* <button
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        Toggle
+      </button>
+      {show ? <CleanUp /> : null} */}
+
+
+      {/* {/*//* bài 6 */}
+      {/* <TodoList/> */}
+      {/* <UseEffect/> */}
+      {/* <Random/> */}
+      {/* <Lamp/> */}
+
+      
+      {/* {/*//* bài 5 */}
+      {/* <FontSizeFC/> */}
+
+            {/* <button
+        onClick={() => {
+          setC(!c);
+        }}
+      >
+        Toggle
+      </button>
+      {c && <LifeCycle/>} */}
+
+
+
       {/* {/*//* bài 4 */}
-      <ReduxObject/>
+      {/* <ReduxObject/> */}
       {/* <TangGiamFontSize/> */}
       {/* <DemoProps2/> */}
 

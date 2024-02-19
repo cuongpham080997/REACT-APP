@@ -7,7 +7,7 @@ import App from "./App.jsx";
 // -- Config Redux --
 import { Provider } from "react-redux";
 import { rootStore } from "./redux/config.store.js";
-
+import {store} from "./redux/reduxToolkit.store.js"
 // import CardRCC from "./card-rcc.jsx";
 // import CardRFC from "./card-rfc.jsx";
 
@@ -21,7 +21,8 @@ import { rootStore } from "./redux/config.store.js";
 // Tóm tắt: Đưa các component vào bên trong thẻ div#root
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={rootStore}>
+    {/* <Provider store={rootStore}> */}
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>

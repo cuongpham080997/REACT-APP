@@ -1,0 +1,17 @@
+- useEffect: là một hook can thiệp vào các giai đoạn vòng đời của component
+1. mounting: (v)
+2. updating: (v)
+3. un-mounting: (v)
+- useEffect: thứ tự chạy: chạy sau khi giao diện được render xong.
+- Cách sử dụng:
+1. 2 tham số
+2. Tham số thứ nhất là function.
+3. Tham số thứ hai là dependencies
+- Dependencies:
+1. Không có = undefined.
+2. []
+3. [count, isOpen]
+
+- clean up function (return function trong useEffect): 
+* Chạy trước khi component chúng ta cập nhật lại - trước khi component re-render(giai đoạn updating).
+* Chạy trước khi component bị xóa khỏi giao diện (xóa khỏi DOM-giai đoạn unmouting).
