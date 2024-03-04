@@ -3,12 +3,13 @@ import React from "react";
 // Hook để gửi action lên reducer.
 import { useDispatch, useSelector } from "react-redux";
 import { giam, tang } from "../../redux/font-size.slice";
-
 function FontSizeBuoi9() {
   // Lấy giá trị state từ trên redux về function component
   const fontSize = useSelector((rootReducer) => {
+    console.log('root',rootReducer)
     return rootReducer.fontSizeReducer;
   });
+  console.log('fontsize',fontSize)
   const dispatch = useDispatch();
 
   return (

@@ -1,33 +1,34 @@
-import React, { useState } from "react";
+import { produce } from "immer";
+import React, { useEffect, useState } from "react";
 import Input from "./components/input";
 import Select from "./components/select";
-import S from "./form-dang-ky.module.css";
 import Upload from "./components/upload/upload";
-import Toggle from "../../../../components/toggle";
+import S from "./form-dang-ky.module.css";
+import { useForm } from "./hooks/useForm";
 
-function FormDangKy() {
-  const [values, setValues] = useState({
-    name: "",
-    brand: "",
+
+/**
+ * Chú ý:
+ * - React chỉ cập nhật state mà các bạn muốn thay đổi cuối cùng.
+ */
+// Tách logic
+
+function FormDangKy(props) {
+  const [, { onSubmit, getFieldProps }] = useForm({
+    handleSubmit: props.handleSubmit,
   });
 
   return (
     <div className={`row ${S["form-dang-ky"]}`}>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-        className="col-8"
-      >
+      <form onSubmit={onSubmit} className="col-8">
         <div className="row">
           <div className="col-6">
             <Input
-              onChange={(e) => {
-                // const newValues = produce(values, (draft) => {
-                //   draft.name = e.target.value;
-                // });
-                // setValues(newValues);
-              }}
+              // onChange={handleChangeValue}
+              // name="name"
+              // value={values.name}
+              {...getFieldProps("name")}
+              // error={touches.name && errors.name}
               label={"Product Name"}
             />
           </div>
@@ -35,35 +36,54 @@ function FormDangKy() {
             <Select
               label={"Brand"}
               options={["Asus", "Apple", "HP", "Lenovo"]}
+              defaultOption="Select Brand"
+              {...getFieldProps("brand")}
+              // onChange={handleChangeValue}
+              // name="brand"
+              // value={values.brand}
             />
           </div>
         </div>
         <div className="row">
           <div className="col-4">
-            <Select label={"Processor"} options={["AMD", "Apple", "Intel"]} />
+            <Select
+              {...getFieldProps("processor")}
+              label={"Processor"}
+              options={["AMD", "Apple", "Intel"]}
+              defaultOption="Select Processor"
+            />
           </div>
           <div className="col-4">
-            <Input label={"RAM"} />
+            <Input {...getFieldProps("ram")} label={"RAM"} />
           </div>
           <div className="col-4">
             <Select
+              {...getFieldProps("storage")}
               label={"Storage Capacity"}
+              defaultOption="Select Storage Capacity"
               options={["256GB", "512GB", "1TB", "2TB"]}
             />
           </div>
         </div>
         <div className="row">
           <div className="col-4">
-            <Input label={"Screen Size"} />
+            <Input {...getFieldProps("screen")} label={"Screen Size"} />
           </div>
           <div className="col-4">
             <Select
+              {...getFieldProps("os")}
               label={"Operating System"}
+              defaultOption="Select Operating System"
               options={["Windows", "MacOS", "Linux"]}
             />
           </div>
           <div className="col-4">
-            <Select label={"Graphics Card"} options={["NVIDIA", "AMD"]} />
+            <Select
+              {...getFieldProps("card")}
+              label={"Graphics Card"}
+              options={["NVIDIA", "AMD"]}
+              defaultOption="Select Graphics Card"
+            />
           </div>
         </div>
 

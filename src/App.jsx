@@ -44,6 +44,7 @@ import Input from "./modules/buoi-8/input";
 import AdminLaptop from "./modules/admin-laptop/admin-laptop";
 import FontSizeBuoi9 from "./modules/buoi-9/font-size";
 import ChangeColorBuoi9 from "./modules/buoi-9/change-color";
+import SubmitForm from "./modules/buoi-8/test";
 // Function component
 /**
  * Lưu ý:
@@ -107,13 +108,19 @@ function App() {
 
     <div className="app" style={{ display: "flex", gap: 10 }}>
 
+      <SubmitForm/>
+
+      {/* {/*//* bài 10 */}
+      {/* <AdminLaptop/> */}
+
       {/* {/*//* bài 9 */}
-      <ChangeColorBuoi9/>
+      {/* <ChangeColorBuoi9/> */}
       {/* <FontSizeBuoi9/> */}
       
       
       {/* {/*//* bài 8 */}
       {/* <AdminLaptop/> */}
+
       {/* <Input/> */}
       
       {/* {/*//* bài 7 */}

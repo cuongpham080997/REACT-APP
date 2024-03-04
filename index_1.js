@@ -6,6 +6,13 @@
  */
 
 // ===== Cache =====
+// function fib(n){
+//     if (n <= 1) return 1;
+//     return fib(n-1)+fib(n-2);
+// }
+
+
+
 function fib(n) {
     if (cache.has(n)) {
       return cache.get(n);
@@ -57,23 +64,38 @@ function fib(n) {
   // 41: 12121343242
   // 42: 23423423423423
   // 43: 23423423413123123123
+
+//   const cache = {}
+
+//   function ver2(n){
+//     if(cache[n]) return cache[n]
+//     cache[n]=fib(n)
+//     return cache[n]
+//   }
+
   
   // hash table: key value
   // Map: key value
   // Object vs Map
-  // Map: cho những key value -> lớn, rất rất nhiều
+  // Map: cho những key value -> lớn, rất rất nhiều thì hiệu suất tốt hơn so với dùng object.Còn hiệu suất của object tốt hơn map khi dữ liệu nhỏ tầm <100
   
   // -- Gắn giá trị khởi tạo
+//   const lsMap = new Map([[2,3],[4,5]])
   const cache = new Map();
   
   function ver2(n) {
     if (cache.has(n)) return cache.get(n);
     // thêm vào cache
   
-    const rs = fib(n);
+    //! cache.set(n,fib(n))
+    //! return cache.get(n);
+
+    const rs = fib(n);     
     cache.set(n, rs);
   
     return rs;
+
+    // Thay vì return về cache.get(n) sẽ mất 1 số thời gian thực thi vs hàm get thì ta tạo 1 biến primatity lưu giữ giá trị fib lun sẽ tối ưu hơn
   }
   
   // console.time("cache 1"); // start
